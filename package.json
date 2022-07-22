@@ -1,10 +1,10 @@
 {
-  "name": "weather-forecast",
+  "name": "weather-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href='https://github.com/sadanandpai/weather-app/dist/weather-forecast'",
+    "build": "ng build --base-href='/weather-app/dist/weather-app/'",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
