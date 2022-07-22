@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href='https://github.com/sadanandpai/weather-app/dist/weather-forecast'",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

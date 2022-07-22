@@ -1,0 +1,6 @@
+<div *ngFor="let data of forecastdata" class="weather-wrapper">
+  <div class="day">{{ data.day }}</div>
+  <div class="icon" [ngClass]="'wi-font wi wi-icon-' + data.icon"></div>
+  <div class="degree">{{ data.max }}</div>
+  <div class="degree">{{ data.min }}</div>
+</div>

@@ -1,0 +1,10 @@
+<form [formGroup]="cityForm">
+  <div class="header-title">Select City</div>
+  <div class="header-select">
+    <select class="form-control" id="citiesList" formControlName="city">
+      <option *ngFor="let city of cities$ | async" [ngValue]="city">
+        {{ city.nm }}
+      </option>
+    </select>
+  </div>
+</form>

@@ -1,0 +1,10 @@
+<div class="today-weather">
+  <div>{{ city$ | async }}</div>
+  <div *ngIf="weatherData">
+    <div
+      class="icon"
+      [ngClass]="'wi-font wi wi-icon-' + weatherData.icon"
+    ></div>
+    <div>{{ weatherData.temp }}</div>
+  </div>
+</div>

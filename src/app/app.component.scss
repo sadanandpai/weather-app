@@ -1,0 +1,58 @@
+.container {
+  max-width: 460px;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 2rem;
+  box-shadow: 0 0 0 10px #e9ebec, 0 0 0 11px #fcfdfe;
+  background-color: #9234e7;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+app-today-weather {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 1.5rem;
+}
+
+app-future-weather {
+  display: flex;
+  flex: 1 1 0;
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#loading {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  margin: 3rem auto;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
