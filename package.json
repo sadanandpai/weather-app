@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href='/weather-app/dist/weather-app/'",
+    "build": "ng build --base-href='/weather-app/dist/'",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
