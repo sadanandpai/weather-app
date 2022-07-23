@@ -1,6 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { map, tap } from 'rxjs';
+import { map, Subscription, tap } from 'rxjs';
 import { City } from 'src/app/interfaces/city-intf';
 import { ApiService } from 'src/app/services/api/api.service';
 import { StoreService } from 'src/app/services/store/store.service';
@@ -11,7 +16,8 @@ import { StoreService } from 'src/app/services/store/store.service';
   styleUrls: ['./city-select.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CitySelectComponent {
+export class CitySelectComponent implements AfterViewInit, OnDestroy {
+  private subsciption!: Subscription;
   public cities$ = this.apiService.getCities();
 
   public cityForm = new FormGroup({
@@ -24,17 +30,15 @@ export class CitySelectComponent {
   ) {}
 
   ngAfterViewInit() {
-    this.apiService
+    this.subsciption = this.apiService
       .getCities()
       .pipe(
         map((cities) => cities[0]),
         tap((city) => {
-          this.storeService.setSelectedCity(city);
           this.cityForm.controls['city'].setValue(city);
         })
       )
-      .subscribe()
-      .unsubscribe();
+      .subscribe();
 
     this.onCityChange();
   }
@@ -49,5 +53,9 @@ export class CitySelectComponent {
         })
       )
       .subscribe();
+  }
+
+  ngOnDestroy() {
+    this.subsciption.unsubscribe();
   }
 }

@@ -9,12 +9,12 @@
   z-index: 1;
   margin: auto;
   margin-top: 2rem;
+  color: white;
 }
 
 app-today-weather {
   display: flex;
   flex-direction: column;
-  color: white;
   font-size: 1.5rem;
 }
 
@@ -22,7 +22,6 @@ app-future-weather {
   display: flex;
   flex: 1 1 0;
   width: 100%;
-  color: white;
   font-size: 1.5rem;
 }
 
